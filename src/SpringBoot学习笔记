@@ -1,0 +1,20 @@
+1.SpringBoot的版本选择1.5的版本，2.0的版本有很多的不一样的地方。会出问题。
+2.启动的方式如果在命令行中，在项目的目录下可以使用命令mvn spring-boot:run来启动项目
+3.如果引入的包有问题，或是版本不对的情况会出现404的状态错误。
+--------------------
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Mon Jun 25 21:31:26 CST 2018
+There was an unexpected error (type=Not Found, status=404).
+No message available
+---------------------
+今天晚上回家前，下载了Maven，但是没有详细的配置，也没有在IDEA中进行设置。到家后就发现出现上面的错误，
+找了半天才知道原来是Maven改变了，所以要先将IDEA中的对应Maven环境配置好才可以。果然，将setting.xml
+和IDEA中的Maven配置完成后，就正常了。
+4.要注意SpringBoot的版本不同。
+5.配置使用yml的样式。
+6.数据库的操作，使用springboot-jpa技术。
+7.Spring框架只对RuntimeException的异常进行回滚操作，而对Exception则不进行回滚操作。
+8.可以在程序处理中抛出自己定义的异常，然后再捕获这个异常进行处理。
+9.当对项目使用mvn clean package进行打包的时候会自动运行测试案例，其中所有的测试用例都会执行，并且在最后会
+输出测试的结果。
